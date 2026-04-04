@@ -1,0 +1,231 @@
+/* ===========================
+   thanks.css
+   予約完了ページ専用スタイル
+   style.cssと併用すること
+=========================== */
+
+/* 白地ベース */
+body {
+  background: #fff;
+  color: var(--lt1);
+}
+.nav {
+  background: rgba(255,255,255,0.95);
+  border-bottom: 0.5px solid var(--lbd);
+}
+.nav-btn {
+  background: var(--magenta);
+  color: #fff;
+  font-size: 11px;
+}
+
+/* 閉じるボタン */
+.rsv-close {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  width: 36px;
+  height: 36px;
+  background: rgba(0,0,0,.1);
+  color: var(--lt2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  z-index: 100;
+  text-decoration: none;
+}
+
+/* ヒーロー */
+.thanks-hero {
+  padding: 80px 24px 36px;
+  text-align: center;
+  background: #fff;
+  border-bottom: 0.5px solid var(--lbd);
+}
+.thanks-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--magenta);
+  color: #fff;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+}
+.thanks-label {
+  font-family: var(--ff-d);
+  font-style: italic;
+  font-size: 12px;
+  letter-spacing: .18em;
+  color: var(--magenta);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.thanks-h1 {
+  font-family: var(--ff-b);
+  font-size: 22px;
+  font-weight: 500;
+  color: #000;
+  margin-bottom: 8px;
+}
+.thanks-sub {
+  font-size: 14px;
+  color: var(--lt3);
+}
+
+/* メインセクション */
+.thanks-sec {
+  padding: 36px 24px 60px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* QR案内 */
+.thanks-qr-block {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 18px;
+  background: rgba(227, 79, 112, .05);
+  border: 0.5px solid rgba(227, 79, 112, .3);
+  border-radius: 4px;
+}
+.thanks-qr-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(227, 79, 112, .15);
+  color: var(--magenta);
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.thanks-qr-body {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.thanks-qr-title {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--lt1);
+}
+.thanks-qr-txt {
+  font-size: 13px;
+  color: var(--lt3);
+  line-height: 1.7;
+}
+
+/* 当日の流れ */
+.thanks-steps {
+  background: var(--mist);
+  border-radius: 4px;
+  padding: 18px;
+}
+.thanks-steps-head {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--lt2);
+  letter-spacing: .06em;
+  margin-bottom: 16px;
+}
+.thanks-step-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.thanks-step {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.thanks-step-num {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--magenta);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.thanks-step-txt {
+  font-size: 14px;
+  color: var(--lt2);
+  line-height: 1.6;
+}
+
+/* 注意事項 */
+.thanks-notes {
+  background: var(--mist);
+  border: 0.5px solid var(--lbd);
+  border-radius: 4px;
+  padding: 18px;
+}
+.thanks-notes-head {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--lt2);
+  letter-spacing: .06em;
+  margin-bottom: 12px;
+}
+.thanks-notes-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.thanks-notes-list li {
+  font-size: 13px;
+  color: var(--lt3);
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.7;
+}
+.thanks-notes-list li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--magenta);
+}
+
+/* ボタン */
+.thanks-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--magenta);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: .08em;
+  padding: 16px;
+  border-radius: 2px;
+  text-align: center;
+}
+
+/* フッター */
+.footer {
+  background: var(--mist2);
+  border-top: 0.5px solid var(--lbd);
+}
+.footer-tag,
+.footer-copy {
+  color: var(--lt3);
+}
+.footer-info {
+  color: var(--lt3);
+  border-top: 0.5px solid var(--lbd);
+}

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>来場予約 | GALLERY DOT 10th "AFTER IMAGE"</title>
+<meta name="description" content="GALLERY DOT 10周年記念展「AFTER IMAGE」の来場予約フォームです。事前予約で限定マグカップをプレゼント。">
+<link rel="icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;1,300;1,400&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="reservation.css">
+</head>
+<body>
+
+<!-- 閉じるボタン -->
+<a href="index.html" class="rsv-close">✕</a>
+
+<!-- ヘッダー -->
+<section class="rsv-hero">
+  <p class="rsv-label">Reservation</p>
+  <h1 class="rsv-h1">来場予約</h1>
+  <p class="rsv-sub">GALLERY DOT 10th "AFTER IMAGE"</p>
+  <p class="rsv-date">2026.1.10 Sat — 1.26 Mon</p>
+</section>
+
+<!-- 特典バナー -->
+<div class="rsv-gift-bar">
+  <span class="rsv-gift-icon">✦</span>
+  <p class="rsv-gift-txt">事前予約で10周年記念マグカップをプレゼント（各日40個・先着順）</p>
+</div>
+
+<!-- フォーム -->
+<section class="rsv-form-sec">
+  <form class="rsv-form" onsubmit="handleSubmit(event); return false;" novalidate>
+
+    <!-- お名前 -->
+    <div class="rsv-field">
+      <label class="rsv-lbl">お名前 <span class="rsv-req">必須</span></label>
+      <input type="text" name="name" class="rsv-input" placeholder="例：山田 太郎" required>
+    </div>
+
+    <!-- メールアドレス -->
+    <div class="rsv-field">
+      <label class="rsv-lbl">メールアドレス <span class="rsv-req">必須</span></label>
+      <input type="email" name="email" class="rsv-input" placeholder="例：example@mail.com" required>
+      <p class="rsv-hint">予約完了メールをお送りします</p>
+    </div>
+
+    <!-- 来場希望日 -->
+    <div class="rsv-field">
+      <label class="rsv-lbl">来場希望日 <span class="rsv-req">必須</span></label>
+      <select name="date" class="rsv-select" required>
+        <option value="0110">1月10日（土）</option>
+        <option value="0111">1月11日（日）</option>
+        <option value="0112">1月12日（月）</option>
+        <option value="0113">1月13日（火）※休廊</option>
+        <option value="0114">1月14日（水）</option>
+        <option value="0115">1月15日（木）</option>
+        <option value="0116">1月16日（金）</option>
+        <option value="0117">1月17日（土）</option>
+        <option value="0118">1月18日（日）</option>
+        <option value="0119">1月19日（月）</option>
+        <option value="0120">1月20日（火）※休廊</option>
+        <option value="0121">1月21日（水）</option>
+        <option value="0122">1月22日（木）</option>
+        <option value="0123">1月23日（金）</option>
+        <option value="0124">1月24日（土）</option>
+        <option value="0125">1月25日（日）</option>
+        <option value="0126">1月26日（月）</option>
+      </select>
+    </div>
+
+    <!-- 同伴者人数 -->
+    <div class="rsv-field">
+      <label class="rsv-lbl">同伴者人数 <span class="rsv-req">必須</span></label>
+      <select name="companions" class="rsv-select" required>
+        <option value="0">0名（お一人様）</option>
+        <option value="1">1名</option>
+        <option value="2">2名</option>
+      </select>
+      <p class="rsv-hint">同伴者も特典対象です（最大2名まで）</p>
+    </div>
+
+    <!-- イベント参加希望 -->
+    <div class="rsv-field">
+      <label class="rsv-lbl">イベント参加希望 <span class="rsv-opt">任意</span></label>
+      <p class="rsv-hint" style="margin-bottom:12px;">参加したいイベントにチェックしてください（複数選択可）</p>
+
+      <div class="rsv-check-list">
+        <label class="rsv-check-row">
+          <input type="checkbox" class="rsv-checkbox" value="1111">
+          <div class="rsv-check-body">
+            <p class="rsv-check-date">1月11日（日）17:00–18:15</p>
+            <p class="rsv-check-title">トーク「AFTER IMAGE と、10年のキュレーション」</p>
+            <p class="rsv-check-note">要事前予約・定員40名</p>
+          </div>
+        </label>
+
+        <label class="rsv-check-row">
+          <input type="checkbox" class="rsv-checkbox" value="1117">
+          <div class="rsv-check-body">
+            <p class="rsv-check-date">1月17日（土）18:00–19:00</p>
+            <p class="rsv-check-title">トーク「記憶・物質・イメージの残り方」</p>
+            <p class="rsv-check-note">要事前予約・定員35名</p>
+          </div>
+        </label>
+
+        <label class="rsv-check-row">
+          <input type="checkbox" class="rsv-checkbox" value="1118">
+          <div class="rsv-check-body">
+            <p class="rsv-check-date">1月18日（日）18:30–19:10</p>
+            <p class="rsv-check-title">ライブ「AFTER IMAGE / Light Trace」</p>
+            <p class="rsv-check-note">要事前予約・定員30名</p>
+          </div>
+        </label>
+
+        <label class="rsv-check-row">
+          <input type="checkbox" class="rsv-checkbox" value="1124">
+          <div class="rsv-check-body">
+            <p class="rsv-check-date">1月24日（土）16:00–17:00</p>
+            <p class="rsv-check-title">トーク「若手作家が語る"AFTER IMAGE"」</p>
+            <p class="rsv-check-note">予約推奨・定員50名</p>
+          </div>
+        </label>
+
+        <label class="rsv-check-row">
+          <input type="checkbox" class="rsv-checkbox" value="1125">
+          <div class="rsv-check-body">
+            <p class="rsv-check-date">1月25日（日）17:30–18:00</p>
+            <p class="rsv-check-title">ライブ「Archive Body」</p>
+            <p class="rsv-check-note">予約不要・当日観覧可</p>
+          </div>
+        </label>
+      </div>
+    </div>
+
+    <!-- メールマガジン -->
+    <div class="rsv-field">
+      <label class="rsv-lbl">メールマガジン <span class="rsv-opt">任意</span></label>
+      <label class="rsv-check-row">
+        <input type="checkbox" class="rsv-checkbox" value="mail">
+        <div class="rsv-check-body">
+          <p class="rsv-check-title">次回展覧会の先行案内を受け取る</p>
+          <p class="rsv-check-note">いつでも解除できます。個人情報は会期終了後90日で削除。</p>
+        </div>
+      </label>
+    </div>
+
+    <!-- 注意事項 -->
+    <div class="rsv-notes">
+      <p class="rsv-notes-head">予約にあたってのご確認</p>
+      <ul class="rsv-notes-list">
+        <li>予約完了後、メールにてQRコードをお送りします</li>
+        <li>当日はQRコードを受付でご提示ください</li>
+        <li>マグカップ特典は各日40個・先着順です</li>
+        <li>変更・キャンセルは来場予定日の前日18:00までにご連絡ください</li>
+        <li>無断キャンセルが繰り返された場合、以後の予約をお断りする場合があります</li>
+      </ul>
+    </div>
+
+    <!-- 同意チェックボックス -->
+    <div class="rsv-field">
+      <label class="rsv-agree-row">
+        <input type="checkbox" class="rsv-checkbox" id="agreePrivacy">
+        <span class="rsv-agree-txt"><a href="#" class="rsv-agree-link">個人情報の取り扱い</a>に同意する <span class="rsv-req">必須</span></span>
+      </label>
+      <label class="rsv-agree-row">
+        <input type="checkbox" class="rsv-checkbox" id="agreeTerms">
+        <span class="rsv-agree-txt"><a href="#" class="rsv-agree-link">予約規約</a>に同意する <span class="rsv-req">必須</span></span>
+      </label>
+      <p class="rsv-error" id="agreeError"></p>
+    </div>
+
+    <!-- 送信ボタン -->
+    <button type="button" class="rsv-submit" onclick="handleSubmit(event)">
+      予約を確定する →
+    </button>
+
+  </form>
+</section>
+
+<!-- フッター -->
+<footer class="footer">
+  <img src="images/gallery_dot_logo.png" alt="GALLERY DOT" class="footer-logo">
+  <p class="footer-tag">Contemporary Art Gallery, Tokyo since 2016</p>
+  <div class="footer-info">
+    主催：GALLERY DOT（東京都渋谷区神宮前1-2-3）<br>
+    <div class="footer-info">
+    主催：GALLERY DOT（東京都渋谷区神宮前1-2-3）<br>
+    お問い合わせ：<a href="mailto:info@gallery-dot.jp">info@gallery-dot.jp</a>
+  </div>
+  <p class="footer-copy">&copy; 2026 GALLERY DOT. All rights reserved.</p>
+</footer>
+
+<script src="reservation.js"></script>
+
+</body>
+</html>

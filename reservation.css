@@ -1,0 +1,588 @@
+/* ===========================
+   reservation.css
+   予約フォームページ専用スタイル
+   style.cssと併用すること
+=========================== */
+
+/* 白地ベース上書き */
+html {
+  background: #F7F7F8;
+}
+body {
+  background: #F7F7F8;
+  color: var(--lt1);
+}
+.nav {
+  background: rgba(255,255,255,0.95);
+  border-bottom: 0.5px solid var(--lbd);
+}
+.nav-btn {
+  background: var(--magenta);
+  color: #fff;
+  font-size: 11px;
+}
+
+/* 閉じるボタン */
+.rsv-close {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  width: 36px;
+  height: 36px;
+  background: rgba(0,0,0,.3);
+  color: var(--lt2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  z-index: 100;
+  text-decoration: none;
+}
+
+/* ヒーロー */
+.rsv-hero {
+  padding: 24px 24px 16px;
+  margin-top: 24px;
+  text-align: center;
+  background: #fff;
+  border-bottom: 0.5px solid var(--lbd);
+  border-radius: 8px 8px 0 0;
+}
+.rsv-label {
+  font-family: var(--ff-d);
+  font-style: italic;
+  font-size: 12px;
+  letter-spacing: .18em;
+  color: var(--magenta);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.rsv-h1 {
+  font-family: var(--ff-b);
+  font-size: 24px;
+  font-weight: 500;
+  color: #000;
+  margin-bottom: 6px;
+  letter-spacing: .05em;
+}
+.rsv-sub {
+  font-family: var(--ff-b);
+  font-size: 13px;
+  letter-spacing: .08em;
+  color: var(--lt2);
+  margin-bottom: 4px;
+}
+.rsv-date {
+  font-size: 13px;
+  letter-spacing: .08em;
+  color: var(--lt2);
+}
+
+/* 特典バナー */
+.rsv-gift-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 24px;
+  background: #fff;
+  border-top: 0.5px solid rgba(227, 79, 112, .3);
+}
+.rsv-gift-icon {
+  color: var(--magenta);
+  font-size: 14px;
+  flex-shrink: 0;
+}
+.rsv-gift-txt {
+  font-size: 13px;
+  color: var(--magenta);
+  letter-spacing: .04em;
+  line-height: 1.6;
+}
+
+/* フォームセクション */
+.rsv-form-sec {
+  padding: 40px 24px 60px;
+  background: #fff;
+  margin-bottom: 40px;
+}.rsv-form {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* フィールド */
+.rsv-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.rsv-lbl {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--lt1);
+  letter-spacing: .04em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.rsv-req {
+  font-size: 11px;
+  color: #fff;
+  background: var(--magenta);
+  padding: 2px 7px;
+  border-radius: 2px;
+  font-weight: 400;
+  letter-spacing: .06em;
+}
+.rsv-opt {
+  font-size: 11px;
+  color: var(--lt3);
+  background: var(--mist2);
+  border: 0.5px solid var(--lbd);
+  padding: 2px 7px;
+  border-radius: 2px;
+  font-weight: 400;
+  letter-spacing: .06em;
+}
+.rsv-hint {
+  font-size: 13px;
+  color: var(--lt3);
+  line-height: 1.6;
+}
+
+/* インプット */
+.rsv-input,
+.rsv-select {
+  width: 100%;
+  padding: 14px 16px;
+  background: #fff;
+  border: 0.5px solid var(--lbd2);
+  border-radius: 2px;
+  color: var(--lt1);
+  font-size: 16px;
+  font-family: var(--ff-b);
+  font-weight: 300;
+  outline: none;
+  transition: border-color .2s;
+}
+.rsv-input:focus,
+.rsv-select:focus {
+  border-color: var(--magenta);
+}
+.rsv-input::placeholder {
+  color: var(--lt3);
+}
+.rsv-select option {
+  background: #fff;
+  color: var(--lt1);
+}
+
+/* チェックボックスリスト */
+.rsv-check-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.rsv-check-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px;
+  background: var(--mist);
+  border: 0.5px solid var(--lbd);
+  border-radius: 2px;
+  cursor: pointer;
+  transition: border-color .2s;
+}
+.rsv-check-row:has(.rsv-checkbox:checked) {
+  border-color: var(--magenta);
+  background: rgba(227, 79, 112, .05);
+}
+.rsv-checkbox {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  accent-color: var(--magenta);
+  cursor: pointer;
+}
+.rsv-check-body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.rsv-check-date {
+  font-size: 13px;
+  color: var(--magenta);
+  letter-spacing: .04em;
+}
+.rsv-check-title {
+  font-size: 15px;
+  color: var(--lt1);
+  line-height: 1.5;
+  font-weight: 400;
+}
+.rsv-check-note {
+  font-size: 12px;
+  color: var(--lt3);
+}
+
+/* 注意事項 */
+.rsv-notes {
+  background: var(--mist);
+  border: 0.5px solid var(--lbd);
+  border-radius: 4px;
+  padding: 18px;
+}
+.rsv-notes-head {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--lt2);
+  letter-spacing: .06em;
+  margin-bottom: 12px;
+}
+.rsv-notes-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.rsv-notes-list li {
+  font-size: 13px;
+  color: var(--lt3);
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.7;
+}
+.rsv-notes-list li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--magenta);
+}
+
+/* 送信ボタン */
+.rsv-submit {
+  width: 100%;
+  padding: 18px;
+  background: var(--magenta);
+  color: #fff;
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: .08em;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  font-family: var(--ff-b);
+  transition: opacity .2s;
+}
+.rsv-submit:active {
+  opacity: .8;
+}
+
+/* フッター */
+.footer {
+  background: var(--mist2);
+  border-top: 0.5px solid var(--lbd);
+}
+.footer-logo {
+  filter: invert(1);
+}
+.footer-tag,
+.footer-copy {
+  color: var(--lt3);
+}
+.footer-info {
+  color: var(--lt3);
+  border-top: 0.5px solid var(--lbd);
+}
+/* 特典バナー */
+.rsv-gift-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 24px;
+  background: rgba(227, 79, 112, .06);
+  border-top: 0.5px solid rgba(227, 79, 112, .3);
+  border-bottom: 0.5px solid rgba(227, 79, 112, .3);
+}
+.rsv-gift-icon {
+  color: var(--magenta);
+  font-size: 14px;
+  flex-shrink: 0;
+}
+.rsv-gift-txt {
+  font-size: 13px;
+  color: var(--magenta);
+  letter-spacing: .04em;
+  line-height: 1.6;
+}
+
+/* フォームセクション */
+.rsv-form-sec {
+  padding: 40px 24px 60px;
+  background: #F7F7F8;
+}
+.rsv-form {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* フィールド */
+.rsv-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.rsv-lbl {
+  font-size: 15px;
+  font-weight: 500;
+  color: #333;
+  letter-spacing: .04em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.rsv-req {
+  font-size: 11px;
+  color: #fff;
+  background: var(--magenta);
+  padding: 2px 7px;
+  border-radius: 2px;
+  font-weight: 400;
+  letter-spacing: .06em;
+}
+.rsv-opt {
+  font-size: 11px;
+  color: #333;
+  background: transparent;
+  border: 0.5px solid #999;
+  padding: 2px 7px;
+  border-radius: 2px;
+  font-weight: 400;
+  letter-spacing: .06em;
+}
+.rsv-hint {
+  font-size: 13px;
+  color: var(--t3);
+  line-height: 1.6;
+}
+
+/* インプット */
+.rsv-input,
+.rsv-select {
+  width: 100%;
+  padding: 14px 16px;
+  background: #fff;
+  border: 0.5px solid var(--lbd2);
+  border-radius: 2px;
+  color: var(--lt1);
+  font-size: 16px;
+  font-family: var(--ff-b);
+  font-weight: 300;
+  outline: none;
+  transition: border-color .2s;
+}
+.rsv-input:focus,
+.rsv-select:focus {
+  border-color: var(--magenta);
+}
+.rsv-input::placeholder {
+  color: var(--lt3);
+}
+.rsv-select option {
+  background: #fff;
+  color: var(--lt1);
+}
+
+/* チェックボックスリスト */
+.rsv-check-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.rsv-check-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px;
+  background: #fff;
+  border: 0.5px solid var(--lbd);
+  border-radius: 2px;
+  cursor: pointer;
+  transition: border-color .2s;
+}
+.rsv-check-row:has(.rsv-checkbox:checked) {
+  border-color: var(--magenta);
+  background: rgba(227, 79, 112, .05);
+}
+.rsv-checkbox {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  accent-color: var(--magenta);
+  cursor: pointer;
+}
+.rsv-check-body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.rsv-check-date {
+  font-size: 13px;
+  color: var(--magenta);
+  letter-spacing: .04em;
+}
+.rsv-check-title {
+  font-size: 15px;
+  color: var(--lt1);
+  line-height: 1.5;
+  font-weight: 400;
+}
+.rsv-check-note {
+  font-size: 12px;
+  color: var(--lt3);
+}
+
+/* 注意事項 */
+.rsv-notes {
+  background: #fff;
+  border: 0.5px solid var(--lbd);
+  border-radius: 4px;
+  padding: 18px;
+}
+.rsv-notes-head {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--lt2);
+  letter-spacing: .06em;
+  margin-bottom: 12px;
+}
+.rsv-notes-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.rsv-notes-list li {
+  font-size: 13px;
+  color: var(--lt3);
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.7;
+}
+.rsv-notes-list li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--magenta);
+}
+
+/* 送信ボタン */
+.rsv-submit {
+  width: 100%;
+  padding: 18px;
+  background: var(--magenta);
+  color: #fff;
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: .08em;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  font-family: var(--ff-b);
+  transition: opacity .2s;
+}
+.rsv-submit:active {
+  opacity: .8;
+}
+/* バリデーションエラー */
+.rsv-error {
+  font-size: 12px;
+  color: #e53935;
+  margin-top: 4px;
+  min-height: 16px;
+}
+.rsv-input.is-error,
+.rsv-select.is-error {
+  border-color: #e53935;
+}
+
+/* 同意チェックボックス */
+.rsv-agree-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  cursor: pointer;
+}
+.rsv-agree-txt {
+  font-size: 14px;
+  color: var(--lt1);
+  line-height: 1.6;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.rsv-agree-link {
+  color: var(--magenta);
+  text-decoration: underline;
+}
+
+/* ===========================
+   PC対応（768px以上）
+=========================== */
+@media (min-width: 768px) {
+
+  /* style.cssのbody max-width: 430pxを上書き */
+  body {
+    max-width: 100%;
+  }
+
+  /* ページ全体を中央寄せ */
+  .rsv-hero,
+  .rsv-gift-bar,
+  .rsv-form-sec {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 0;
+  }
+
+  .rsv-hero {
+    margin-top: 60px;
+    border-radius: 8px 8px 0 0;
+    padding: 40px 48px 28px;
+  }
+
+  .rsv-gift-bar {
+    padding: 16px 48px;
+  }
+
+  .rsv-form-sec {
+    border-radius: 0 0 8px 8px;
+    padding: 48px 48px 72px;
+    margin-bottom: 60px;
+  }
+
+  /* ヒーロー文字サイズ */
+  .rsv-h1 {
+    font-size: 32px;
+  }
+
+  /* 閉じるボタン位置調整 */
+  .rsv-close {
+    top: 24px;
+    right: 24px;
+  }
+
+  /* フッター */
+  .footer {
+    text-align: center;
+    padding: 40px 24px;
+  }
+}
