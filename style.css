@@ -23,7 +23,7 @@ a{color:inherit;text-decoration:none;}
 .hero-bg{position:absolute;inset:0;z-index:0;background:#080a0c;}
 .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:20% center;opacity:.9;}
 .hero-ov{position:absolute;inset:0;z-index:1;background:linear-gradient(to bottom,rgba(11,12,16,.1) 0%,rgba(11,12,16,.05) 30%,rgba(11,12,16,.55) 60%,rgba(11,12,16,.95) 85%,rgba(11,12,16,1) 100%);}
-.hero-content{position:relative;z-index:2;padding:0 24px;}
+.hero-content{position:relative;z-index:2;padding:80px 24px 0;}
 .hero-eye{font-size:16px;letter-spacing:.14em;color:var(--magenta);text-transform:uppercase;margin-bottom:18px;display:flex;align-items:center;gap:10px;}
 .hero-eye::before{content:'';display:block;width:20px;height:1px;background:var(--magenta);}
 .hero-h1{font-family:var(--ff-d);font-weight:300;font-size:62px;letter-spacing:.03em;line-height:.92;color:var(--t1);margin-bottom:6px;}
@@ -190,8 +190,8 @@ a{color:inherit;text-decoration:none;}
 .info-lbl{font-size:14px;letter-spacing:.1em;color:var(--t2);text-transform:uppercase;padding-top:2px;}
 .info-val{font-size:17px;color:var(--t1);line-height:1.85;}
 .info-val strong{color:var(--t1);font-weight:500;}
-.gallery-imgs-wrap{overflow:hidden;}
-.gallery-single-img{width:100%;height:auto;display:block;}
+.gallery-imgs-wrap{overflow:hidden;width:100%;aspect-ratio:4/3;}
+.gallery-single-img{width:100%;height:100%;object-fit:cover;object-position:25% center;display:block;}
 
 /* CTA BANNER */
 .cta-banner{padding:64px 24px;text-align:center;position:relative;overflow:hidden;border-top:0.5px solid var(--bd);}
@@ -318,22 +318,24 @@ a{color:inherit;text-decoration:none;}
 
   /* bodyの幅制限を解除・中央寄せ */
   body {
-    max-width: 1200px;
+    max-width: 100%;
     margin: 0 auto;
   }
 
-  /* コンテンツ幅を800pxに絞って中央寄せ */
+  /* 全セクション横幅フル・左右に余白 */
   .sec,
   .artists,
   .footer {
-    padding-left: max(40px, calc((100% - 800px) / 2));
-    padding-right: max(40px, calc((100% - 800px) / 2));
+    padding-left: 80px;
+    padding-right: 80px;
   }
+
+
 
   /* タイムラインはposition:absoluteを使うのでpaddingをリセット */
   #history {
-    padding-left: max(40px, calc((100% - 800px) / 2));
-    padding-right: max(40px, calc((100% - 800px) / 2));
+    padding-left: 80px;
+    padding-right: 80px;
   }
   #history .tl-list {
     position: relative;
@@ -346,10 +348,56 @@ a{color:inherit;text-decoration:none;}
 
   /* ヒーローはコンテンツだけ中央に */
   .hero-content {
-    max-width: 800px;
+    max-width: 1100px;
     margin: 0 auto;
-    padding-left: 60px;
-    padding-right: 60px;
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+  .hero-h1 {
+    font-size: 120px;
+  }
+  .hero-eye {
+    font-size: 40px;
+  }
+  .hero-sub {
+    font-size: 54px;
+  }
+  .hero-date {
+    font-size: 40px;
+  }
+  .hero-venue {
+    font-size: 40px;
+    display: inline;
+  }
+  .hero-date + .hero-venue::before {
+    content: " ";
+  }
+
+  /* CTAボタンをflex横並びに */
+  .cta-stack {
+    flex-direction: row;
+    gap: 16px;
+  }
+
+  /* アーティストカード：2カラムグリッド */
+  .a-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3px;
+    padding: 0;
+  }
+  .a-card {
+    grid-template-columns: 240px 1fr;
+  }
+  .a-img {
+    width: 240px;
+    aspect-ratio: 1;
+  }
+  .a-body {
+    padding: 24px 28px;
+  }
+  .a-name {
+    font-size: 22px;
   }
 
   /* ヒーロー画像：白い線が見えないよう左の作品だけ表示 */
@@ -407,35 +455,4 @@ a{color:inherit;text-decoration:none;}
   color: var(--aqua);
   text-decoration: underline;
   text-underline-offset: 3px;
-}
-
-/* フッターSNSアイコン */
-.footer-sns {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-top: 20px;
-  margin-bottom: 4px;
-}
-.footer-sns-icon {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 18px;
-  text-decoration: none;
-  transition: opacity .2s;
-}
-.footer-sns-icon:active {
-  opacity: .7;
-}
-
-@media (min-width: 768px) {
-  .footer-sns-icon {
-    width: 52px;
-    height: 52px;
-    font-size: 28px;
-  }
 }
