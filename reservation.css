@@ -34,7 +34,7 @@ body {
 }
 
 /* 閉じるボタン */
-.rsv-back {
+.rsv-close {
   position: fixed;
   top: 16px;
   right: 16px;
@@ -51,16 +51,8 @@ body {
   z-index: 100;
   letter-spacing: .04em;
 }
-.rsv-back:active {
+.rsv-close:active {
   opacity: .7;
-}
-@media (min-width: 768px) {
-  .rsv-back {
-    font-size: 24px;
-    padding: 4px 16px;
-    top: 24px;
-    right: 24px;
-  }
 }
 
 /* ヒーロー */
@@ -308,9 +300,12 @@ body {
 .footer {
   background: var(--mist2);
   border-top: 0.5px solid var(--lbd);
+  text-align: center;
 }
 .footer-logo {
   filter: invert(1);
+  display: block;
+  margin: 0 auto 6px;
 }
 .footer-tag,
 .footer-copy {
@@ -599,6 +594,8 @@ body {
 
   /* 閉じるボタン位置調整 */
   .rsv-close {
+    font-size: 24px;
+    padding: 4px 16px;
     top: 24px;
     right: 24px;
   }
@@ -607,5 +604,11 @@ body {
   .footer {
     text-align: center;
     padding: 40px 24px;
+  }
+
+  /* 送信ボタン幅を制限 */
+  .rsv-submit {
+    max-width: 480px;
+    margin: 0 auto;
   }
 }
